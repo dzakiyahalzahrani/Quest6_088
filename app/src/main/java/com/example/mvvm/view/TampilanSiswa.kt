@@ -24,11 +24,13 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.mvvm.R
+import com.example.mvvm.model.Siswa
 
 @OptIn(ExperimentalMaterial3Api::class)
 
 @Composable
-fun TampilData(
+fun TampilanSiswa(
+    statusUiSiswa: Siswa,
     onBackClick:()->Unit
 ){
     val items = listOf(
