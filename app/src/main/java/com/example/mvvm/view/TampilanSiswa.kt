@@ -46,7 +46,7 @@ fun TampilanSiswa(
             TopAppBar(
                 title = {
                     Text(
-                        text = stringResource(id= R.string.tampil),
+                        text = stringResource(id= R.string.detail),
                         color = Color.White
                     )},
                 colors = TopAppBarDefaults
