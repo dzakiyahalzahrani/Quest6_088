@@ -34,9 +34,12 @@ fun TampilanSiswa(
     onBackClick:()->Unit
 ){
     val items = listOf(
-        Pair(stringResource(id = R.string.nama), "Contoh Nama"),
-        Pair(stringResource(id = R.string.gender), "Lainnya"),
-        Pair(stringResource(id = R.string.alamat), "Yogyakarta"),
+        Pair(stringResource(R.string.nama),
+            statusUiSiswa.nama),
+        Pair(stringResource(R.string.gender),
+            statusUiSiswa.gender),
+        Pair(stringResource(R.string.alamat),
+            statusUiSiswa.alamat),
     )
     Scaffold (modifier = Modifier,
         {
