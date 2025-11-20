@@ -12,6 +12,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.mvvm.model.DataJK.JenisK
 import com.example.mvvm.view.FormSiswa
+import com.example.mvvm.view.TampilanSiswa
 import com.example.mvvm.viewmodel.SiswaViewModel
 
 enum class Navigasi {
@@ -45,8 +46,9 @@ fun SiswaApp(
             }
             composable(route = Navigasi.Tampilan.name){
                 TampilanSiswa(
+                    statusUiSiswa = uiState.value,
                     onBackClick = {
-                        cancelAndBackToFormulirku(navController)
+                        cancelAndBackToFormulir(navController)
                     }
                 )
             }
@@ -55,7 +57,7 @@ fun SiswaApp(
 }
 
 
-private fun cancelAndBackToFormulirku(
+private fun cancelAndBackToFormulir(
     navController:NavHostController
 ){
     navController.popBackStack(Navigasi.Formulir.name,
