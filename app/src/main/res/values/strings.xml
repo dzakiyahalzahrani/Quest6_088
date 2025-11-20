@@ -1,10 +1,13 @@
 <resources>
     <string name="app_name">MVVM</string>
+    <string name="laki">Laki-Laki</string>
+    <string name="wanita">Perempuan</string>
     <string name="submit">Submit</string>
     <string name="back">Back</string>
-    <string name="nama_lengkap">NAMA LENGKAP</string>
-    <string name="jenis_kelamin">JENIS KELAMIN</string>
+    <string name="nama">NAMA LENGKAP</string>
     <string name="alamat">ALAMAT</string>
-    <string name="tampil">Tampilan Data</string>
-    <string name="home">Form Isian</string>
+    <string name="gender">JENIS KELAMIN</string>
+    <string name="detail">Data Siswa</string>
+    <string name="home">FORM</string>
+
 </resources>
