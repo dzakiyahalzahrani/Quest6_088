@@ -10,10 +10,12 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.example.mvvm.model.DataJK.JenisK
+import com.example.mvvm.view.FormSiswa
 import com.example.mvvm.viewmodel.SiswaViewModel
 
 enum class Navigasi {
-    FormSiswa,
+    Formulir,
     Tampilan
 }
 
@@ -29,13 +31,14 @@ fun SiswaApp(
         val uiState = viewModel.statusUI.collectAsState()
         NavHost(
             navController = navController,
-            startDestination = Navigasi.FormSiswa.name,
+            startDestination = Navigasi.Formulir.name,
 
             modifier = Modifier.padding(isiRuang)){
-            composable(route = Navigasi.FormSiswa.name){
+            composable(route = Navigasi.Formulir.name){
                 FormSiswa (
-                    //pilihanJK = JenisK.map { id -> konteks.resources.getString}
+                    pilihanJK = JenisK.map { id -> konteks.resources.getString(id)},
                     OnSubmitBtnClick = {
+                        viewModel.setSiswa(it)
                         navController.navigate(Navigasi.Tampilan.name)
                     }
                 )
@@ -55,6 +58,6 @@ fun SiswaApp(
 private fun cancelAndBackToFormulirku(
     navController:NavHostController
 ){
-    navController.popBackStack(Navigasi.Formulirku.name,
+    navController.popBackStack(Navigasi.Formulir.name,
         inclusive = false)
 }
